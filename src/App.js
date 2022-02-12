@@ -1,9 +1,13 @@
+import { GetData } from './components/getData';
 import './styles/main.css';
 
 function App() {
   return (
-    <div className="App">
-      <h1 className='test'>Hello world!</h1>
+    <div className="app">
+      <h1>Covid19 Information</h1>
+      <div className='renderArea'>
+        <GetData/>
+      </div>
     </div>
   );
 }

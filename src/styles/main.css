@@ -4,8 +4,15 @@
   box-sizing: border-box;
 }
 
-.test {
-  color: #FB4D3D;
-  background: #EAC435;
-  border: 1px solid #03CEA4;
+.app {
+  background: #AAAAAA;
+  width: 100%;
+  height: 100vh;
+}
+.app h1 {
+  font-size: 25px;
+  color: #071013;
+  text-align: center;
+  padding: 20px;
+  background: #EB5160;
 }/*# sourceMappingURL=main.css.map */

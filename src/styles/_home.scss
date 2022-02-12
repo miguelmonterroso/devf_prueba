@@ -1,5 +1,12 @@
-.test{
-    color: $warning;
-    background: $danger;
-    border: 1px solid $notBad;
+.app{
+    background: $background;
+    width: 100%;
+    height: 100vh;
+    h1{
+        font-size: 25px;
+        color: $text;
+        text-align: center;
+        padding: 20px;
+        background: $red;
+    }
 }
