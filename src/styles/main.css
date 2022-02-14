@@ -15,4 +15,24 @@
   text-align: center;
   padding: 20px;
   background: #EB5160;
+}
+.app .space {
+  margin-top: 20px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px #AAAAAA;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #EB5160;
+  border-radius: 10px;
 }/*# sourceMappingURL=main.css.map */
