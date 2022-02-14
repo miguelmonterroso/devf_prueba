@@ -6,6 +6,12 @@ import Select from 'react-select';
 export const GetData = () => {
     const [pais, setPais] = useState({})
     const [options, setOptions] = useState([])
+    const [valueState,setValueState] = useState("Guatemala")
+
+    const handler = (event) => {
+      const value = event.value
+      setValueState(value)
+  }
 
     const work = () => {
       const getCountrys = () =>{
@@ -20,25 +26,42 @@ export const GetData = () => {
           for (const key in data) {
             const opt = {value: key, label: key}
             setOptions(list => [...list, opt])
-        }
-          const country = data.Guatemala.All
-          setPais(country)
-          return 
-        
+        } 
         })
         .catch(function (error) {
           console.log(error);
         });
       }
       getCountrys()
+
+      const getSpecificCountry = () =>{
+        var config = {
+          method: 'get',
+          url: `https://covid-api.mmediagroup.fr/v1/cases?country=${valueState}`,
+          headers: { }
+        };
+        axios(config)
+        .then(function (response) {
+          console.log(response.data);
+          const data = response.data
+          const country = data.All
+          setPais(country)
+          return
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+      }
+      getSpecificCountry();
     }
 
     useEffect(() => {
       work()
     },[])
+    
   return (
     <div className="info">
-        <Select options={options} placeholder='Search...'/>
+        <Select onChange={handler} options={options} placeholder='Search...'/>
         <CustomCard name={pais.country} death={pais.deaths} active={pais.confirmed} ab={pais.abbreviation} population={pais.population}/>
     </div>
     
