@@ -6,7 +6,7 @@ import Select from 'react-select';
 export const GetData = () => {
     const [pais, setPais] = useState({})
     const [options, setOptions] = useState([])
-    const [valueState,setValueState] = useState("Guatemala")
+    const [valueState,setValueState] = useState('Guatemala')
 
     const handler = (event) => {
       const value = event.value
@@ -34,6 +34,14 @@ export const GetData = () => {
       }
       getCountrys()
 
+     
+    }
+
+    useEffect(() => {
+      work()
+    },[])
+
+    useEffect(() => {
       const getSpecificCountry = () =>{
         var config = {
           method: 'get',
@@ -53,11 +61,7 @@ export const GetData = () => {
         });
       }
       getSpecificCountry();
-    }
-
-    useEffect(() => {
-      work()
-    },[])
+    },[valueState])
     
   return (
     <div className="info">
