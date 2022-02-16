@@ -38,7 +38,8 @@ export const CustomCard = (props) => {
                         Publication: {props.age}<br/>
                         race: {props.race}<br/>
                         Estatus: {props.status}<br/>
-                        Eyes color: {props.eyes}
+                        Eyes color: {props.eyes}<br/>
+                        Subject: {props.subjects}
                     </Modal.Body>
                 </Modal>
                 </Card.Body>
