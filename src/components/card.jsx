@@ -1,44 +1,46 @@
 import React, {useState} from 'react';
-import { Card, Offcanvas, ProgressBar } from 'react-bootstrap';
+import { Card, Modal } from 'react-bootstrap';
 import { Button } from 'react-bootstrap';
 
 
 export const CustomCard = (props) => {
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [fullscreen, setFullscreen] = useState(true);
+
+  function handleShow(breakpoint) {
+    setFullscreen(breakpoint);
+    setShow(true);
+  }
 
 
   return <div className='space'>
             <Card>
-                <Card.Header>{props.ab}</Card.Header>
+                <Card.Header>{props.title}</Card.Header>
                 <Card.Body>
                 <Card.Title>{props.name}</Card.Title>
+                <Card.Img variant="top" src={props.image} />
                 <Card.Text>
-                    Confirmed cases: {props.active}
+                    Sex: {props.sex}<br/>
+                    Publication: {props.age}
                 </Card.Text>
                 <Card.Text>
-                    Deaths: {props.death}
+                    
                 </Card.Text>
-                <Button variant="warning" onClick={handleShow} className="me-2">
+                <Button variant="warning" onClick={() => handleShow()}>
                     Information
                 </Button>
-                <Offcanvas show={show} onHide={handleClose} placement='bottom'>
-                    <Offcanvas.Header closeButton>
-                    <Offcanvas.Title>{props.name}</Offcanvas.Title>
-                    </Offcanvas.Header>
-                    <Offcanvas.Body>
-                    <p>This is the information of {props.name}</p>
-                    <div>
-                        <ProgressBar variant="danger" now={80.9} />
-                        <p>Confirmed: {props.active}</p>
-                        <ProgressBar variant="warning" now={20} />
-                        <p>Deaths: {props.death}</p>
-                        <ProgressBar variant="info" now={60} />
-                        <p>Population: {props.population}</p>
-                    </div>
-                    </Offcanvas.Body>
-                </Offcanvas>
+                <Modal show={show} fullscreen={fullscreen} onHide={() => setShow(false)}>
+                    <Modal.Header closeButton>
+                    <Modal.Title>{props.title}</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                        Sex: {props.sex}<br/>
+                        Publication: {props.age}<br/>
+                        race: {props.race}<br/>
+                        Estatus: {props.status}<br/>
+                        Eyes color: {props.eyes}
+                    </Modal.Body>
+                </Modal>
                 </Card.Body>
             </Card>
             

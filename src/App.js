@@ -1,29 +1,24 @@
 import './styles/main.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Container } from 'react-bootstrap';
+import { Container, Stack } from 'react-bootstrap';
 import React from 'react';
-import { GetData } from './components/getData';
+// import { GetData } from './components/getData';
+import { FBI } from './components/fbi';
 
 
 
 
 function App() {
-  // React.useEffect(()=>{
-  //   fetch('https://api.ipregistry.co/?key=tryout')
-  //   .then(function (response) {
-  //       return response.json();
-  //   })
-  //   .then(function (payload) {
-  //       console.log(payload.location.country.name);
-  //   });
-  // }, [])
   return (
     <div className="app">
       <h1>Covid19 Information</h1>
       <div className='renderArea'>
-        <Container fluid='md'>
+        <Container fluid='xs'>
+          <Stack gap={3} className="col-md-5 mx-auto">
+            <FBI/>
+          </Stack>
           
-          <GetData/>
+          {/* <GetData/> */}
         </Container>
       </div>
     </div>

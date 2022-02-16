@@ -3,16 +3,15 @@ import axios from 'axios'
 import { CustomCard } from './card'
 import Select from 'react-select';
 
-export const GetData = () => {
+export const GetData = (props) => {
     const [pais, setPais] = useState({})
     const [options, setOptions] = useState([])
-    const [valueState,setValueState] = useState('Guatemala')
+    const [valueState,setValueState] = useState(`Global`)
 
     const handler = (event) => {
       const value = event.value
       setValueState(value)
   }
-
     const work = () => {
       const getCountrys = () =>{
         var config = {
@@ -33,8 +32,6 @@ export const GetData = () => {
         });
       }
       getCountrys()
-
-     
     }
 
     useEffect(() => {
@@ -50,7 +47,6 @@ export const GetData = () => {
         };
         axios(config)
         .then(function (response) {
-          console.log(response.data);
           const data = response.data
           const country = data.All
           setPais(country)
@@ -72,35 +68,4 @@ export const GetData = () => {
   )
 }
 
-
-
-
-
-    // const getData = () =>{
-    //     var config = {
-    //         method: 'get',
-    //         url: 'https://covid-api.mmediagroup.fr/v1/cases?country=France',
-    //         headers: { }
-    //       };
-          
-    //       axios(config)
-    //       .then(function (response) {
-    //         const pais = response.data.All
-    //         const info = {
-    //             nombre: pais.country,
-    //             confirmados: pais.confirmed,
-    //             muertes: pais.deaths,
-    //             capital: pais.capital_city,
-    //             poblacion: pais.population,
-    //             continente: pais.continent,
-    //             expectativa_vida: pais.life_expectancy,
-    //             ubicacion: pais.location,
-    //             ab: pais.abbreviation
-    //         }
-    //         setData(list => [...list, info])
-    //       })
-    //       .catch(function (error) {
-    //         console.log(error);
-    //       });
-    // }
     
