@@ -14,6 +14,8 @@
     }
 }
 
+
+// En esta seccion agregamos los estilos para el scroll bar
 /* width */
 ::-webkit-scrollbar {
     width: 3px;
@@ -39,6 +41,8 @@
     margin-top: 20px;
   }
 
+  // Estos estilos son para el boton que nos lleva al top de la pagina
+
   .top{
     background: $red;
     border-radius: 50%;
@@ -52,6 +56,9 @@
     justify-content: center;
     text-decoration: none;
   }
+
+
+  // esta seccion la encontramos en el app 
 
   .renderArea{
     display: flex;
