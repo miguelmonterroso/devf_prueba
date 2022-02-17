@@ -5,7 +5,7 @@ import { Button } from 'react-bootstrap'
 
 export const FBI = () => {
   const [list, setList] = useState([])
-  const [count, setCount] = useState(1)
+  const [count, setCount] = useState(2)
 
   const getData = () => {
     var config = {
@@ -52,7 +52,7 @@ export const FBI = () => {
   }
 
   const plus = () => {
-    setCount(count + 20)
+    setCount(count + 1)
     more()
   }
 

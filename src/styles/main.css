@@ -51,10 +51,17 @@
   height: 30px;
   width: 30px;
   position: fixed;
-  top: 94%;
+  top: 92%;
   left: 88%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
+}
+
+.renderArea {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }/*# sourceMappingURL=main.css.map */
